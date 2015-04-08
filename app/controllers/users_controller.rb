@@ -14,6 +14,8 @@ class UsersController < ApplicationController
   		unless current_user.admin?
   			redirect_to :root
   		end
+  	else
+  		redirect_to :root
   	end
   end
 
