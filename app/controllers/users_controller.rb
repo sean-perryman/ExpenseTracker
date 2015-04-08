@@ -1,5 +1,19 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update]
+	before_filter :logged_in, :only [:show, :edit, :update]
+	before_filter :logged_in_admin, :only [:index]
+
+  def logged_in
+    if !user_signed_in?
+      redirect_to :root
+    end
+  end
+
+  def logged_in_admin
+  	if !current_user.admin?
+  		redirect_to :root
+  	end
+  end
 
 	def create
 		@user = User.new(user_params)
