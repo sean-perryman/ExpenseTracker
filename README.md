@@ -1,0 +1,1 @@
+Basic expense tracker. Sort of like SpendOut, but free. Easily clone and push to Heroku to track your expenses. 

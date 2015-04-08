@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: ExpenseTracker_development
+
+test:
+  <<: *default
+  database: ExpenseTracker_test
+
+production:
+  <<: *default
+  database: ExpenseTracker_production
+  username: ExpenseTracker
+  password: <%= ENV['EXPENSETRACKER_DATABASE_PASSWORD'] %>
