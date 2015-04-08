@@ -8,18 +8,19 @@
         %td Date
         %td= @expense.date
       %tr
-        %td Description:
+        %td Description
         %td= @expense.description
       %tr
-        %td Category:
+        %td Category
         %td= @expense.category
       %tr
-        %td Amount:
+        %td Amount
         %td= @expense.amount
       %tr
-        %td Receipt image:
+        %td Receipt image
         %td= @expense.receipt_image
       %tr
+        %td Notes
         %td= @expense.notes
     = link_to 'Edit', edit_expense_path(@expense), :class => "btn btn-default"
     = link_to 'Back', expenses_path, :class => "btn btn-default"

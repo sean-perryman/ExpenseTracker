@@ -15,6 +15,15 @@ class ApplicationController < ActionController::Base
 		@current_user ||= User.find(session[:user_id]) if session[:user_id]
 	end
 
+	def total_expenses
+		total = 0;
+		current_user.expenses.each do |e|
+			total += e.amount
+		end
+		total
+	end
+
 	helper_method :current_user
 	helper_method :user_signed_in?
+	helper_method :total_expenses
 end
