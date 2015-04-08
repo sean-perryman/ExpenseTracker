@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def logged_in_admin
-  	if user_signed_in
+  	if user_signed_in?
   		unless current_user.admin?
   			redirect_to :root
   		end
