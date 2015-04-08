@@ -6,7 +6,7 @@
       = f.association :user, :default => current_user, :readonly => true
       = f.input :date
       = f.input :description
-      = f.input :category
+      = f.input :category, collection: [["Business", "Business"]]
       = f.input :amount
       = f.input :receipt_image
       = f.input :notes
