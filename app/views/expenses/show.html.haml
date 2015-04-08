@@ -1,0 +1,25 @@
+.container.well
+  .col-md-6
+    %p
+      %strong Owner:
+      = @expense.user
+    %p
+      %strong Date:
+      = @expense.date
+    %p
+      %strong Description:
+      = @expense.description
+    %p
+      %strong Category:
+      = @expense.category
+    %p
+      %strong Amount:
+      = @expense.amount
+    %p
+      %strong Receipt image:
+      = @expense.receipt_image
+    %p
+      %strong Notes:
+      = @expense.notes
+    = link_to 'Edit', edit_expense_path(@expense), :class => "btn btn-default"
+    = link_to 'Back', expenses_path, :class => "btn btn-default"

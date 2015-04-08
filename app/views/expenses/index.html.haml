@@ -1,0 +1,29 @@
+.container.well
+  .col-md-6
+    %h3 Listing Expenses
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Owner
+          %th Date
+          %th Description
+          %th Category
+          %th Amount
+          %th Receipt image
+          %th Notes
+          %th{:colspan => "3"}
+      %tbody
+        - current_user.expenses.each do |expense|
+          %tr
+            %td= expense.user
+            %td= expense.date
+            %td= expense.description
+            %td= expense.category
+            %td= expense.amount
+            %td= expense.receipt_image
+            %td= expense.notes
+            %td= link_to 'Show', expense, :class => "btn btn-sm btn-default"
+            %td= link_to 'Edit', edit_expense_path(expense), :class => "btn btn-sm btn-default"
+            %td= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-sm btn-danger"
+    %br/
+    = link_to 'New Expense', new_expense_path

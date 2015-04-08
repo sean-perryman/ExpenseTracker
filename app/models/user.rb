@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 	attr_accessor :password
 	
 	#relationships
-	has_many :captains
+	has_many :expenses
 
 	#validations
 	validates :username, presence: true, if: :username
