@@ -1,25 +1,26 @@
 .container.well
   .col-md-6
-    %p
-      %strong Owner:
-      = @expense.user
-    %p
-      %strong Date:
-      = @expense.date
-    %p
-      %strong Description:
-      = @expense.description
-    %p
-      %strong Category:
-      = @expense.category
-    %p
-      %strong Amount:
-      = @expense.amount
-    %p
-      %strong Receipt image:
-      = @expense.receipt_image
-    %p
-      %strong Notes:
-      = @expense.notes
+    %table.table
+      %tr
+        %td Owner
+        %td= @expense.user
+      %tr
+        %td Date
+        %td= @expense.date
+      %tr
+        %td Description:
+        %td= @expense.description
+      %tr
+        %td Category:
+        %td= @expense.category
+      %tr
+        %td Amount:
+        %td= @expense.amount
+      %tr
+        %td Receipt image:
+        %td= @expense.receipt_image
+      %tr
+        %td= @expense.notes
     = link_to 'Edit', edit_expense_path(@expense), :class => "btn btn-default"
     = link_to 'Back', expenses_path, :class => "btn btn-default"
+    = link_to 'New Expense', new_expense_path, :class => "btn btn-default"
