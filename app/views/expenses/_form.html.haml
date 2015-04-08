@@ -1,14 +1,12 @@
-.container.well
-  .col-md-6
-    = simple_form_for(@expense) do |f|
-      = f.error_notification
-      
-      = f.association :user, :default => current_user, :readonly => true
-      = f.input :date
-      = f.input :description
-      = f.input :category, collection: [["Business", "Business"]]
-      = f.input :amount
-      = f.input :receipt_image
-      = f.input :notes
+= simple_form_for(@expense) do |f|
+  = f.error_notification
+  
+  = f.association :user, :default => current_user, :readonly => true
+  = f.input :date
+  = f.input :description
+  = f.input :category, collection: [["Business", "Business"]]
+  = f.input :amount
+  = f.input :receipt_image
+  = f.input :notes
 
-      = f.button :submit
+  = f.button :submit
