@@ -19,7 +19,7 @@
             %td= expense.date
             %td= expense.description
             %td= expense.category
-            %td= expense.amount
+            %td $#{expense.amount}
             %td= expense.receipt_image
             %td= expense.notes
             %td= link_to 'Show', expense, :class => "btn btn-sm btn-default"
