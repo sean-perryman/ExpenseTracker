@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :expenses
+  resources :expenses, :users
 
-  resources :users
+  namespace :api do
+  	resources :expenses
+  end
 
   get "/log-in" => "sessions#new"
   post "/log-in" => "sessions#create"
